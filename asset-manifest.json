@@ -1,0 +1,14 @@
+{
+  "main.css": "/mmo-simulator/static/css/main.ab328bf3.chunk.css",
+  "main.js": "/mmo-simulator/static/js/main.c686f5a9.chunk.js",
+  "main.js.map": "/mmo-simulator/static/js/main.c686f5a9.chunk.js.map",
+  "runtime~main.js": "/mmo-simulator/static/js/runtime~main.c3c53b9a.js",
+  "runtime~main.js.map": "/mmo-simulator/static/js/runtime~main.c3c53b9a.js.map",
+  "static/js/2.5bf9b2cd.chunk.js": "/mmo-simulator/static/js/2.5bf9b2cd.chunk.js",
+  "static/js/2.5bf9b2cd.chunk.js.map": "/mmo-simulator/static/js/2.5bf9b2cd.chunk.js.map",
+  "index.html": "/mmo-simulator/index.html",
+  "precache-manifest.cdec0e14f1806aee44c8e7c9d5a7ee75.js": "/mmo-simulator/precache-manifest.cdec0e14f1806aee44c8e7c9d5a7ee75.js",
+  "service-worker.js": "/mmo-simulator/service-worker.js",
+  "static/css/main.ab328bf3.chunk.css.map": "/mmo-simulator/static/css/main.ab328bf3.chunk.css.map",
+  "static/media/logo.svg": "/mmo-simulator/static/media/logo.5d5d9eef.svg"
+}
