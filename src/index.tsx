@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider as ReduxProvider } from "react-redux";
-import configureStore from "./state/store";
+import {Provider} from "react-redux";
 import App from "./views/App";
+
 import "./index.css";
 
-const reduxStore = configureStore({});
+import store from "./state";
 
 ReactDOM.render(
-    <ReduxProvider store={reduxStore}>
+    <Provider store={store}>
         <App />
-    </ReduxProvider>,
+    </Provider>,
     document.getElementById("root")
 );

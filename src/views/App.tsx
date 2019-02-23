@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import logo from "./logo.svg";
+import {Footer} from "./todos-list/footer.component";
+import {VisibleTodoList} from "./todos-list/todos-list.container";
+import {AddTodo} from "./todos-list/add-todo.component";
 
 class App extends Component {
   render() {
@@ -20,6 +23,11 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <div>
+          <AddTodo />
+          <VisibleTodoList />
+          <Footer />
+        </div>
       </div>
     );
   }
