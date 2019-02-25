@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mmo-simulator/precache-manifest.cdec0e14f1806aee44c8e7c9d5a7ee75.js"
+  "/mmo-simulator/precache-manifest.281c9a59f7fefbda32e4e2a2b55927cc.js"
 );
 
 workbox.clientsClaim();
