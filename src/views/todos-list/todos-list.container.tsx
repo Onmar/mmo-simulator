@@ -1,7 +1,8 @@
 import * as MyTypes from "MyTypes";
-import {todosActions, todosSelectors} from "../../state/ducks/todos";
 import {connect} from "react-redux";
 import {TodosList} from "./todos-list.component";
+import {todosSelectors} from "../../state/ducks/todos/todos.selectors";
+import {todosActions} from "../../state/ducks/todos/todos.actions";
 
 
 const mapStateToProps = (state: MyTypes.RootState) => ({

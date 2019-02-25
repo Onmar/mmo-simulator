@@ -1,8 +1,8 @@
 import * as MyTypes from "MyTypes";
-import {TodosFilter} from "../../state/ducks/todos/models";
+import {TodosFilter} from "../../state/ducks/todos/todos.models";
 import {connect} from "react-redux";
 import {Link} from "./link.component";
-import {todosActions} from "../../state/ducks/todos";
+import {todosActions} from "../../state/ducks/todos/todos.actions";
 
 type OwnProps = {
     filter: TodosFilter;

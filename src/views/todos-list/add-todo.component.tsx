@@ -1,24 +1,27 @@
 import React from 'react'
-import * as MyTypes from "MyTypes";
-import {Dispatch} from "redux";
-import {add} from "../../state/ducks/todos/actions";
-import {connect} from "react-redux";
 
-const AddTodoComponent = ({ dispatch }: { dispatch: Dispatch<MyTypes.RootAction> }) => {
+type Props = {
+    onSubmit: (payload: {text: string}) => any;
+}
+
+export const AddTodoComponent: React.FC<Props> = props => {
+    const { onSubmit } = props;
 
     let input: HTMLInputElement;
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!input.value.trim()) {
+            return;
+        }
+        onSubmit({text: input.value});
+        input.value = '';
+    };
 
     return (
         <div>
             <form
-              onSubmit={e => {
-                  e.preventDefault();
-                  if (!input.value.trim()) {
-                      return;
-                  }
-                  dispatch(add({text: input.value}));
-                  input.value = '';
-              }}
+              onSubmit={handleSubmit}
             >
                 <input
                     ref={node => {
@@ -33,5 +36,3 @@ const AddTodoComponent = ({ dispatch }: { dispatch: Dispatch<MyTypes.RootAction>
     )
 
 };
-
-export const AddTodo = connect()(AddTodoComponent);

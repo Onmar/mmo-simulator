@@ -1,22 +1,22 @@
-import {Todo, TodosFilter} from "./models";
+import {Todo, TodosFilter} from "./todos.models";
 import {ActionType, getType} from "typesafe-actions";
 
-import * as todos from './actions';
 import {combineReducers, Reducer} from "redux";
+import {todosActions} from "./todos.actions";
 
 export type TodosState = {
     readonly todos: Todo[];
     readonly todosFilter: TodosFilter;
 }
 
-export type TodosAction = ActionType<typeof todos>;
+export type TodosAction = ActionType<typeof todosActions>;
 
-const todosReducer: Reducer<Todo[], TodosAction> = (state = [], action) => {
+const todosListReducer: Reducer<Todo[], TodosAction> = (state = [], action) => {
     switch (action.type) {
-        case getType(todos.add):
+        case getType(todosActions.add):
             return [...state, action.payload];
 
-        case getType(todos.toggle):
+        case getType(todosActions.toggle):
             return state.map(item => (item.id === action.payload.id ? {...item, completed: !item.completed} : item));
 
         default:
@@ -26,7 +26,7 @@ const todosReducer: Reducer<Todo[], TodosAction> = (state = [], action) => {
 
 const todosFilterReducer: Reducer<TodosFilter, TodosAction> = (state = TodosFilter.ALL, action) => {
     switch(action.type) {
-        case getType(todos.changeFilter):
+        case getType(todosActions.changeFilter):
             return action.payload;
 
         default:
@@ -34,7 +34,7 @@ const todosFilterReducer: Reducer<TodosFilter, TodosAction> = (state = TodosFilt
     }
 };
 
-export default combineReducers<TodosState, TodosAction>({
-    todos: todosReducer,
+export const todosReducer = combineReducers<TodosState, TodosAction>({
+    todos: todosListReducer,
     todosFilter: todosFilterReducer
-})
+});

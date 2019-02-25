@@ -1,5 +1,5 @@
-import {todosActions} from "./ducks/todos";
+import {todosActions} from "./ducks/todos/todos.actions";
 
-export default {
+export const rootActions = {
     todos: todosActions,
 };

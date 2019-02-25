@@ -1,17 +1,17 @@
 import React from 'react';
 
-import {Todo as TodoType} from "../../state/ducks/todos/models";
+import {Todo as TodoType} from "../../state/ducks/todos/todos.models";
 import {Todo} from "./todo.component";
 
 type Props = {
     todos: Array<TodoType>;
-    onTodoClick: ({ id }: { id: number }) => any;
+    onTodoClick: ({ id }: { id: string }) => any;
 };
 
 export const TodosList: React.FC<Props> = props => {
     const { todos, onTodoClick } = props;
 
-    const handleTodoClick = (id: number) => {
+    const handleTodoClick = (id: string) => {
         onTodoClick({ id: id });
     };
 

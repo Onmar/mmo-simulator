@@ -1,5 +1,5 @@
 import React from 'react'
-import {TodosFilter} from "../../state/ducks/todos/models";
+import {TodosFilter} from "../../state/ducks/todos/todos.models";
 import {FilterLink} from "./link.container";
 
 type Props = {
