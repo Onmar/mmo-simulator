@@ -1,10 +1,10 @@
 import React from 'react';
-import { Item } from "../../state/ducks/items/items.models";
+import { Item } from "../../models/items.models";
 import styles from './item-display.module.css';
 import Tippy from "@tippy.js/react";
 
 type Props = {
-    item: Item | undefined;
+    item: Item | null;
 }
 
 export const ItemDisplayComponent: React.FC<Props> = props => {
@@ -12,14 +12,14 @@ export const ItemDisplayComponent: React.FC<Props> = props => {
 
     return (
         <div>
-            <Tippy content={item ?
-                (<div>
-                    {JSON.stringify(item)}
-                </div>)
-                :
-                ""
-            }>
+            <Tippy content={item ? (
+                <div>
+                    {JSON.stringify(item, null, 2)}
+                </div>
+                ) : ""
+            } maxWidth={1000} placement={"right-start"}>
                 <div className={styles.itemContainer}>
+                    {item ? item.type : ""}
                 </div>
             </Tippy>
         </div>
